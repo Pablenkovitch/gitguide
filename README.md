@@ -123,7 +123,7 @@ or use another algorythm if you see an error message:
 ssh-keygen -t rsa -b 4096 -C "email linked to your GitHub"
 ```
 
-### 9.3 Choose plase to store your keys
+### 9.3 Choose place to store your keys
 After this you will see a pair of files in choosen directory.
 
 And you will be asked about creating code phrase. 
