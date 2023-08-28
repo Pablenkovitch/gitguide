@@ -104,14 +104,51 @@ Than create my_project_name repo
 after this step we will connect remote repo on GitHub with our local repo.
 But first of all we make SSH-keys
 
-## 7. SSH
+## 7. SSH keys
+You don't have to do this, but linking you local pero to remote repo VIA SSH will make your life easier.
+Word.
 
-## 8. Git life cycle 
+### 7.1 Check if SSH_keys allready exists
+
+```
+ls -la .ssh/ 
+```
+
+Delete if there are any you have not created.
+
+### 7.2 Generate new pair of SSH-keys
+
+``` 
+ssh-keygen -t ed25519 -C "email linked to your GitHub"
+```
+
+or use another algorythm if you see an error message:
+
+```
+ssh-keygen -t rsa -b 4096 -C "email linked to your GitHub"
+```
+
+### 7.3 Choose plase to store your keys
+After this you will see a pair of files in choosen directory.
+
+And you will be asked about creating code phrase. 
+This can be skiped. Otherwise you will have to enter this phrase with every commit.
+
+Then check keys:
+
+```
+ls -lah ~/.ssh
+```
+
+Two files will appear. One of them is .pub. It means public.
+
+Othe one is private. **No one should see it!**
+## 8. File life cycle in Git
 
 ```mermaid
 graph LR;
   untracked -- "git add" --> staged;
-  staged    -- "???"     --> tracked/comitted;
+  staged    -- "git commit -m 'meaningful message'" --> tracked/comitted;
 
 %% стрелка без текста для примера: 
   A --> B;
