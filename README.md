@@ -219,7 +219,29 @@ After first time this would be enough:
 git push
 ``` 
 
-## 12. File life cycle in Git
+## 12. Useful info.
+### 12.1 HEAD and use of git log 
+
+```
+git log
+```
+
+You will see 'HEAD -> master'. 
+**HEAD** - is file, that points to the **last commit**
+There is a pointer to refs/heads/master inside of 'HEAD'.
+
+```
+cat refs/heads/master
+```
+
+You will see a hash. Exactly like from
+
+```
+git log
+```
+
+
+### 12.2 File life cycle in Git
 
 ```mermaid
 graph LR;
