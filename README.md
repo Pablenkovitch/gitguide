@@ -6,7 +6,25 @@ Check installation.
 ```
 git version
 ```
-## 2. Initialize git local repository
+### 1.1 Set up .gitconfig
+From anywhere:
+```
+git config --global user.name "put_your_name_here"
+```
+
+```
+git config --global user.email "put_your_email_here"
+```
+To check changes
+
+```
+git config --list
+```
+or
+```
+cat ~/.gitconfig 
+```
+## 2. Initialize your local repository
 **Go to project catalog**
 ```
 mkdir my_project_name
@@ -58,9 +76,13 @@ git log
 ```
 
 ## 6. Create remote repo
-VIA GitHub account.. 
+VIA GitHub account
+
+ 
 [GitHub](https://www.github.com "remote repo")
-Than create my_project_name repo..
+Than create my_project_name repo
+
+
 after this step we will connect remote repo on GitHub with our local repo.
 But first of all we make SSH-keys
 
