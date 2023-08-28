@@ -185,11 +185,39 @@ The authenticity of host 'github.com (140.82.121.4)' can't be established. ED255
 
 Enter "Yes".
 
-## 10. Linking our local repo with our remote repo
+## 10. Linking our local repo with our remote repo.
+Go to your remote repo's page on GitHub. Choose type "SSH". And copy an URL.
 
+From **your local repo folder** 
 
+```
+git remote add origin git@github.com:%account_name%/project_name.git
+```
 
-## 11. Push, baby, push
+In this command you give two parameters: remote repo's name and it's URL.
+
+Meaning: "origin" - name, "git@github.com:%account_name%/project_name.git" - URL you copied.
+
+Check link between two repos:
+
+```
+git remote -v
+``` 
+
+## 11. Push, baby, push.
+It's time to deliver local file to remote repo.
+
+In your **first time** do it like this:
+
+```
+git push -u origin main
+```
+
+After first time this would be enough:
+
+```
+git push
+``` 
 
 ## 12. File life cycle in Git
 
