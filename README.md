@@ -234,21 +234,60 @@ There is a pointer to refs/heads/master inside of 'HEAD'.
 cat refs/heads/master
 ```
 
-You will see a hash. Exactly like from
+You will see a hash. Exactly like from:
 
 ```
 git log
 ```
 
+To make log short use:
 
-### 12.2 File life cycle in Git
+```
+git log --oneline
+```
+
+### 12.2 File life cycle in Git.
+There are several stages in file life...Here they are:
+1. Untracked.
+2. Tracked.
+3. Staged.
+4. Modified.
 
 ```mermaid
 graph LR;
-  untracked -- "git add" --> staged;
+  touch file_name -- "git status" --> untracked
+  untracked -- "git add" --> tracked/staged;
   staged    -- "git commit -m 'meaningful message'" --> tracked/comitted;
+  tracked -- some changes --> modified
+%% endless cycle
 
-%% стрелка без текста для примера: 
-  A --> B;
 ```
+
+## 13. Committing
+Best practice is to commit with short and meaningful messages bitween 30 and 72 symbols.
+
+Examples:
+
+```
+git commit -m "Add info about commits"
+```
+
+```
+git commit -m "LGS-239: fix typos in line #496"
+```
+
+LGS-239 - project or task name.
+
+### git commit -m '<type>:<message>'
+Two possible types:
+1. feat if feature was add
+2. fix if something was fixed
+
+```
+git commit -m 'feat: add sum counter'
+```
+
+```
+git commit -m 'fix: stack overflow'
+``
 
