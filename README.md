@@ -8,7 +8,7 @@ Check installation.
 git version
 ```
 
-### 1.1 Set up .gitconfig
+## 2. Set up .gitconfig
 From anywhere:
 
 ```
@@ -31,7 +31,7 @@ or
 cat ~/.gitconfig 
 ```
 
-## 2. Initialize your local repository
+## 3. Initialize your local repository
 **Go to project catalog**
 
 ```
@@ -46,19 +46,17 @@ Check this action by:
 git status
 ```
  
-## 3. Create what you need
-Make some stuff _in project catalog_.
+## 4. Create what you need
+Make some stuff **in project catalog**.
 
-## 4. Add those files to your repo
-To do this, go to the project catalog and 
-print this
-to add all the files
+## 5. Add those files to your repo
+To do this, go to the project catalog 
 
 ```
 git add --all
 ``` 
 
-or command to add curren catalog:
+or command to add current catalog:
 
 ```
 git add .
@@ -70,7 +68,6 @@ Command to add specific file:
 git add file_name
 ```
  
-### 4.1 Important note
 After changing something in files you have to 
 
 ```
@@ -79,36 +76,34 @@ git add
  
 again
 
-## 5. Commiting changes 
+## 6. Commiting changes 
 Only after this command you save the changes 
 
 ```
 git commit -m 'short description of change'
 ```
 
-### 5.1 Note
+## 7. Checking
 If you want to check the history of commits, use
 
 ```
 git log
 ```
 
-## 6. Create remote repo
-VIA GitHub account
+## 8. Create remote repo
+VIA [GitHub](https://www.github.com "remote repo")
 
- 
-[GitHub](https://www.github.com "remote repo")
 Than create my_project_name repo
 
+After this step we will our connect our local repo to remote repo on GitHub.
 
-after this step we will connect remote repo on GitHub with our local repo.
-But first of all we make SSH-keys
+But first of all we are going to make SSH-keys
 
-## 7. SSH keys
+## 9. SSH keys
 You don't have to do this, but linking you local pero to remote repo VIA SSH will make your life easier.
 Word.
 
-### 7.1 Check if SSH_keys allready exists
+### 9.1 Check if SSH_keys allready exists
 
 ```
 ls -la .ssh/ 
@@ -116,7 +111,7 @@ ls -la .ssh/
 
 Delete if there are any you have not created.
 
-### 7.2 Generate new pair of SSH-keys
+### 9.2 Generate new pair of SSH-keys
 
 ``` 
 ssh-keygen -t ed25519 -C "email linked to your GitHub"
@@ -128,7 +123,7 @@ or use another algorythm if you see an error message:
 ssh-keygen -t rsa -b 4096 -C "email linked to your GitHub"
 ```
 
-### 7.3 Choose plase to store your keys
+### 9.3 Choose plase to store your keys
 After this you will see a pair of files in choosen directory.
 
 And you will be asked about creating code phrase. 
@@ -142,8 +137,61 @@ ls -lah ~/.ssh
 
 Two files will appear. One of them is .pub. It means public.
 
-Othe one is private. **No one should see it!**
-## 8. File life cycle in Git
+Other one is private. **No one should see it!**
+
+### 9.4 Linking SSH-key whith GitHub
+Copy the internals of .pub file into buffer
+
+```
+pbcopy < ~/.ssh/id_rsa.pub
+```
+
+or
+
+```
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+or
+
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+On Windows use 'clip' instead of 'pbcopy'
+And copy output using alt+shift+c
+Then go to **Settings** in GitHub's account.
+Click "SSH and GPG keys". Then click "New SSH key".
+
+In "Title" field spell key's name. "Personal key" for example.
+
+"Key type" field must be "Authentication Key".
+
+Into field "Key" paste your **public key** from buffer.
+
+Press "Add SSH key".
+
+### 9.4 Checking correctness.
+
+```
+ssh -T git@github.com
+```
+ 
+If this is yor **first time**, you'll see
+
+```bash
+The authenticity of host 'github.com (140.82.121.4)' can't be established. ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU. This key is not known by any other names. Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+Enter "Yes".
+
+## 10. Linking our local repo with our remote repo
+
+
+
+## 11. Push, baby, push
+
+## 12. File life cycle in Git
 
 ```mermaid
 graph LR;
