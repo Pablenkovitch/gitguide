@@ -260,7 +260,6 @@ graph LR;
   staged    -- "git commit -m 'meaningful message'" --> tracked/comitted;
   tracked -- some changes --> modified
 %% endless cycle
-
 ```
 
 ## 13. Committing
