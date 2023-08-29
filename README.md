@@ -253,6 +253,12 @@ There are several stages in file life...Here they are:
 3. Staged.
 4. Modified.
 
+```mermaid
+graph LR;
+  untracked--"git add"-->staged;
+  staged  -- "git commit -m 'meaningful message'"     --> tracked/comitted;
+
+```
 
 ```mermaid
 graph LR;
@@ -260,6 +266,7 @@ graph LR;
   untracked-->"git add"-->tracked/staged;
   staged-->"git commit -m meaningful message"-->tracked/comitted;
   tracked-->some changes--> modified;
+
 ```
 
 ## 13. Committing
