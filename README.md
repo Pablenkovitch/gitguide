@@ -255,14 +255,15 @@ There are several stages in file life...Here they are:
 
 ```mermaid
 graph LR;
+  touch_file_name--"git status"-->untracked;
   untracked--"git add"-->staged;
-  staged  -- "git commit -m 'meaningful message'"     --> tracked/comitted;
+  staged  -- "git commit"--> tracked/comitted;
 
 ```
 
 ```mermaid
 graph LR;
-  touch_file_name-->"git status"-->untracked;
+  touch_file_name--"git status"-->untracked;
   untracked-->"git add"-->tracked/staged;
   staged-->"git commit -m meaningful message"-->tracked/comitted;
   tracked-->some changes--> modified;
