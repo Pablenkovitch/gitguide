@@ -1,4 +1,4 @@
-# The ultimate git guide for old dudes
+﻿# The ultimate git guide for old dudes
 
 ## 1. Your first move
 Install Git for your OS.
@@ -76,7 +76,7 @@ git add
  
 again
 
-## 6. Commiting changes 
+## 6. Committing changes 
 Only after this command you save the changes 
 
 ```
@@ -103,7 +103,7 @@ But first of all we are going to make SSH-keys
 You don't have to do this, but linking you local pero to remote repo VIA SSH will make your life easier.
 Word.
 
-### 9.1 Check if SSH_keys allready exists
+### 9.1 Check if SSH_keys already exists
 
 ```
 ls -la .ssh/ 
@@ -117,17 +117,17 @@ Delete if there are any you have not created.
 ssh-keygen -t ed25519 -C "email linked to your GitHub"
 ```
 
-or use another algorythm if you see an error message:
+or use another algorithm if you see an error message:
 
 ```
 ssh-keygen -t rsa -b 4096 -C "email linked to your GitHub"
 ```
 
 ### 9.3 Choose place to store your keys
-After this you will see a pair of files in choosen directory.
+After this you will see a pair of files in chosen directory.
 
 And you will be asked about creating code phrase. 
-This can be skiped. Otherwise you will have to enter this phrase with every commit.
+This can be skipped. Otherwise you will have to enter this phrase with every commit.
 
 Then check keys:
 
@@ -139,7 +139,7 @@ Two files will appear. One of them is .pub. It means public.
 
 Other one is private. **No one should see it!**
 
-### 9.4 Linking SSH-key whith GitHub
+### 9.4 Linking SSH-key with GitHub
 Copy the internals of .pub file into buffer
 
 ```
@@ -177,7 +177,7 @@ Press "Add SSH key".
 ssh -T git@github.com
 ```
  
-If this is yor **first time**, you'll see
+If this is your **first time**, you'll see
 
 ```bash
 The authenticity of host 'github.com (140.82.121.4)' can't be established. ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU. This key is not known by any other names. Are you sure you want to continue connecting (yes/no/[fingerprint])?
@@ -264,7 +264,7 @@ graph LR;
 ```
 
 ## 13. Committing
-Best practice is to commit with short and meaningful messages bitween 30 and 72 symbols.
+Best practice is to commit with short and meaningful messages between 30 and 72 symbols.
 
 Examples:
 
